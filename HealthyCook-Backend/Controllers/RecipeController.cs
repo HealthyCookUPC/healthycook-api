@@ -293,5 +293,25 @@ namespace HealthyCook_Backend.Controllers
             }
         }
 
+        /// <summary>
+        /// Obtener lista de las recetas por el nombre
+        /// </summary>
+        /// <param name="calories"></param>
+        /// <returns></returns>
+        [Route("SearchRecypeByCalories/{calories}")]
+        [HttpGet]
+        public async Task<IActionResult> SearchRecipeByCalories(int calories)
+        {
+            try
+            {
+                var recipeList = await _recipeService.SearchRecipeByCalories(calories);
+                return Ok(recipeList);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
     }
 }

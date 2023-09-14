@@ -164,5 +164,14 @@ namespace HealthyCook_Backend.Persistence.Repositories
                 .ToListAsync();
             return recipeList;
         }
+
+        public async Task<List<Recipe>> SearchRecipeByCalories(int calories)
+        {
+            var recipeList = await _context.Recipes
+                .FromSqlRaw("select  r.ID, r.Name, r.Description, r.Preparation, r.Active, r.Published, r.UserID, r.DateCreated, rd.PreparationTime, rd.TimePeriod, rd.Servings, rd.Difficulty, rd.Calories" +
+                            $"from [dbo].[RecipeDetails] as rd left outer join [dbo].[Recipes] as r on rd.RecipeID = r.ID where rd Calories > '%{calories}%' and r.Active = 1 order by r.ID desc")
+                .ToListAsync();
+            return recipeList;
+        }
     }
 }

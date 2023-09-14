@@ -22,7 +22,7 @@ namespace HealthyCook_Backend.Domain.IServices
         Task<List<Recipe>> SearchRecipeBetweenDates(string startDate, string endDate);
         Task<List<Recipe>> SearchRecipeByDifficulty(string difficulty);
         Task<List<Recipe>> SearchRecipeByName(string name);
-
+        Task<List<Recipe>> SearchRecipeByCalories(int calories);
 
     }
 }
