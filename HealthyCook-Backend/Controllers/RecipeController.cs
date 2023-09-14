@@ -250,6 +250,24 @@ namespace HealthyCook_Backend.Controllers
         }
 
 
+        /// <summary>
+        /// Obtener lista de las recetas por dificultad
+        /// </summary>
+        /// <param name="difficulty"></param>
+        /// <returns></returns>
+
+        public async Task<IActionResult> SearchRecipeByDifficulty(string difficulty)
+        {
+            try
+            {
+                var recipeList = await _recipeService.SearchRecipeByDifficulty(difficulty);
+                return Ok(recipeList);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
 
     }
 }

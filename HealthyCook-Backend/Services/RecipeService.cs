@@ -74,5 +74,9 @@ namespace HealthyCook_Backend.Services
         {
             return await _recipeRepository.SearchRecipeBetweenDates(startDate, endDate);
         }
+        public async Task<List<Recipe>> SearchRecipeByDifficulty(string difficulty)
+        {
+            return await _recipeRepository.SearchRecipeByDifficulty(difficulty);
+        }
     }
 }
