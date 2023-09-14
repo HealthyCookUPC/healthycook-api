@@ -78,5 +78,11 @@ namespace HealthyCook_Backend.Services
         {
             return await _recipeRepository.SearchRecipeByDifficulty(difficulty);
         }
+        public async Task<List<Recipe>> SearchRecipeByName(string name)
+        {
+            return await _recipeRepository.SearchRecipeByName(name);
+        }
+
+
     }
 }

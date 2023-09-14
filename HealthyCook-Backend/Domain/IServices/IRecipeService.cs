@@ -21,6 +21,8 @@ namespace HealthyCook_Backend.Domain.IServices
         Task<List<Recipe>> SearchRecipeByIngredient(string ingredient, string excludedIngredient);
         Task<List<Recipe>> SearchRecipeBetweenDates(string startDate, string endDate);
         Task<List<Recipe>> SearchRecipeByDifficulty(string difficulty);
+        Task<List<Recipe>> SearchRecipeByName(string name);
+
 
     }
 }

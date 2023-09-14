@@ -256,11 +256,35 @@ namespace HealthyCook_Backend.Controllers
         /// <param name="difficulty"></param>
         /// <returns></returns>
 
+        [Route("SearchRecypeByDifficulty/{difficulty}")]
+        [HttpGet]
         public async Task<IActionResult> SearchRecipeByDifficulty(string difficulty)
         {
             try
             {
                 var recipeList = await _recipeService.SearchRecipeByDifficulty(difficulty);
+                return Ok(recipeList);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+        
+        
+        
+        /// <summary>
+        /// Obtener lista de las recetas por el nombre
+        /// </summary>
+        /// <param name="name"></param>
+        /// <returns></returns>
+        [Route("SearchRecypeByName/{name}")]
+        [HttpGet]
+        public async Task<IActionResult> SearchRecipeByName(string name)
+        {
+            try
+            {
+                var recipeList = await _recipeService.SearchRecipeByName(name);
                 return Ok(recipeList);
             }
             catch (Exception ex)
