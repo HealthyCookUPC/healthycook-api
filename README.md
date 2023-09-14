@@ -1,6 +1,6 @@
 # HealthyCook-Backend
 Pasos para compilar el backend
-- git clone https://github.com/EveryCanCook/HealthyCook-Backend.git
+- git clone https://github.com/EveryCanCook/HealthyCook-Backend.githttps://github.com/HealthyCookUPC/healthycook-api.git
 - Abrir el archivo de la solución _HealthyCook-Backend.sln_
 - Doble clic en el archivo de proyecto _HealthyCook-Backend_
 - Dirigirse a la linea 9 y buscar la etiqueta <_DocumentationFile_>
