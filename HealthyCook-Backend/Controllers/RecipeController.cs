@@ -228,9 +228,28 @@ namespace HealthyCook_Backend.Controllers
                 return BadRequest(ex.Message);
             }
         }
+        /// <summary>
+        /// Obtener lista de las recetas publicadas en un rango de fechas
+        /// </summary>
+        /// <param name="startDate"></param>
+        /// <param name="endDate"></param>
+        /// <returns></returns>
+        [Route("SearchRecipeBetweenDates/{startDate}/{endDate}")]
+        [HttpGet]
+        public async Task<IActionResult> SearchRecipeBetweenDates(string startDate, string endDate)
+        {
+            try
+            {
+                var recipeList = await _recipeService.SearchRecipeBetweenDates(startDate, endDate);
+                return Ok(recipeList);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
 
-        
 
-        
+
     }
 }

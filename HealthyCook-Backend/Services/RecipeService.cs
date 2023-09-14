@@ -70,5 +70,9 @@ namespace HealthyCook_Backend.Services
         {
             return await _recipeRepository.SearchRecipeByIngredient(ingredient, excludedIngredient);
         }
+        public async Task<List<Recipe>> SearchRecipeBetweenDates(string startDate, string endDate)
+        {
+            return await _recipeRepository.SearchRecipeBetweenDates(startDate, endDate);
+        }
     }
 }

@@ -139,5 +139,13 @@ namespace HealthyCook_Backend.Persistence.Repositories
                 .ToListAsync();
             return recipeList;
         }
+        public async Task<List<Recipe>> SearchRecipeBetweenDates(string startDate, string endDate)
+        {
+            var recipeList = await _context.Recipes
+                 .FromSqlRaw("select r.ID, r.Name, r.Description, r.Preparation, r.Active, r.Published, r.UserID, r.DateCreated " +
+                $"from [dbo].[Recipes] as r where r.DateCreated between '{startDate}' and '{endDate}' order by r.ID desc")
+                .ToListAsync();
+            return recipeList;
+        }
     }
 }
