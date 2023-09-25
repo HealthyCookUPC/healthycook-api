@@ -7,7 +7,7 @@
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <DocumentationFile>D:\Universidad\Ciclo 2022-01\Evolución de Software\HealthyCook\Backend\HealthyCook-Backend\HealthyCook-Backend\HealthyCook-Backend.xml</DocumentationFile>
+    <DocumentationFile>C:\UPC\2302\Team Software Process\Backend\healthycook-api\HealthyCook-Backend\HealthyCook-Backend.xml</DocumentationFile>
   </PropertyGroup>
 	
   <ItemGroup>
