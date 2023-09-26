@@ -92,5 +92,9 @@ namespace HealthyCook_Backend.Services
         {
             return await _recipeRepository.SearchRecipeByCategory(category);
         }
+        public async Task<List<Recipe>> SearchRecipeByRating(int rating)
+        {
+            return await _recipeRepository.SearchRecipeByRating(rating);
+        }
     }
 }

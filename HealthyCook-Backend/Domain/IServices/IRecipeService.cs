@@ -24,6 +24,9 @@ namespace HealthyCook_Backend.Domain.IServices
         Task<List<Recipe>> SearchRecipeByName(string name);
         Task<List<Recipe>> SearchRecipeByCalories(int calories);
         Task<List<Recipe>> SearchRecipeByCategory(string category);
+        
+        Task<List<Recipe>> SearchRecipeByRating(int rating);
+
 
 
     }
