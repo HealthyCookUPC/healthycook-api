@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace HealthyCook_Backend.Persistence.Repositories
 {
@@ -170,6 +171,16 @@ namespace HealthyCook_Backend.Persistence.Repositories
             var recipeList = await _context.Recipes
                 .FromSqlRaw("select  r.ID, r.Name, r.Description, r.Preparation, r.Active, r.Published, r.UserID, r.DateCreated, rd.PreparationTime, rd.TimePeriod, rd.Servings, rd.Difficulty, rd.Calories " +
                             $"from [dbo].[RecipeDetails] as rd left outer join [dbo].[Recipes] as r on rd.RecipeID = r.ID where rd.Calories > 250 and r.Active = 1 order by r.ID desc")
+                .ToListAsync();
+            return recipeList;
+        }
+
+        public async Task<List<Recipe>> SearchRecipeByCategory(string category)
+        {
+            var recipeList = await _context.Recipes
+                 .FromSqlRaw("select  r.ID, r.Name, r.Preparation, r.Active, r.Published, r.UserID, r.DateCreated, rd.PreparationTime, rd.TimePeriod, rd.Servings, rd.Difficulty, rd.Calories, c.Description " +
+                $"from [dbo].[RecipeDetails] as rd left outer join [dbo].[Recipes] as r on rd.RecipeID = r.ID left outer join [dbo].[Category] as c on r.CategoryID = c.ID " +
+                $"where c.Name = '{category}' and r.Active = 1 order by r.ID desc")
                 .ToListAsync();
             return recipeList;
         }

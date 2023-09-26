@@ -313,5 +313,25 @@ namespace HealthyCook_Backend.Controllers
             }
         }
 
+        /// <summary>
+        /// Obtener lista de las recetas por la categoria
+        /// </summary>
+        /// <param name="category"></param>
+        /// <returns></returns>
+        [Route("SearchRecypeByCategory/{category}")]
+        [HttpGet]
+        public async Task<IActionResult> SearchRecipeByCategory(string category)
+        {
+            try
+            {
+                var recipeList = await _recipeService.SearchRecipeByCategory(category);
+                return Ok(recipeList);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
     }
 }

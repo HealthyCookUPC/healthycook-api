@@ -5,6 +5,7 @@ using HealthyCook_Backend.Domain.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Threading.Tasks;
 
 namespace HealthyCook_Backend.Services
@@ -87,6 +88,9 @@ namespace HealthyCook_Backend.Services
             return await _recipeRepository.SearchRecipeByCalories(calories);
         }
 
-
+        public async Task<List<Recipe>> SearchRecipeByCategory(string category)
+        {
+            return await _recipeRepository.SearchRecipeByCategory(category);
+        }
     }
 }
