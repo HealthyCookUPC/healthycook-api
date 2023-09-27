@@ -332,6 +332,26 @@ namespace HealthyCook_Backend.Controllers
                 return BadRequest(ex.Message);
             }
         }
+        
+        /// <summary>
+        /// Obtener lista de las recetas por su calificación
+        /// </summary>
+        /// <param name="rating"></param>
+        /// <returns></returns>
+        [Route("SearchRecypeByRating/{rating}")]
+        [HttpGet]
+        public async Task<IActionResult> SearchRecipeByRating(int rating)
+        {
+            try
+            {
+                var recipeList = await _recipeService.SearchRecipeByRating(rating);
+                return Ok(recipeList);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
 
     }
 }
