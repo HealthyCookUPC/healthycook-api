@@ -12,6 +12,7 @@ namespace HealthyCook_Backend.Domain.IServices
         Task<bool> ValidateExistence(User user);
         Task<bool> ValidateEmail(string email);
         Task<User> SearchUser(int userID);
+        Task<User> UpdateUserImage(int userID, string imageUrl);
         Task DeleteUser(User user);
     }
 }

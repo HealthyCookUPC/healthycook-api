@@ -25,6 +25,8 @@ namespace HealthyCook_Backend.Domain.Models
         public string Email { get; set; }
         [Required]
         public string Password { get; set; }
+        [Column(TypeName = "varchar(255)")]
+        public string ImageURL { get; set; }
 
         public DateTime DateCreated { get; set; }
     }

@@ -52,5 +52,17 @@ namespace HealthyCook_Backend.Persistence.Repositories
                 .AnyAsync(x => x.Email == email);
             return validateEmail;
         }
+
+        public async Task<User> UpdateUserImage(int userID, string imageUrl)
+        {
+            var user = await _context.Users
+                .Where(x => x.ID == userID)
+                .FirstOrDefaultAsync();
+            user.ImageURL = imageUrl;
+            _context.Add(user);
+            await _context.SaveChangesAsync();
+            return user;
+            
+        }
     }
 }

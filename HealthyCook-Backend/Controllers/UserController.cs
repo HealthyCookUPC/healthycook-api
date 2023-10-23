@@ -107,6 +107,25 @@ namespace HealthyCook_Backend.Controllers
             }
         }
 
-
+        /// <summary>
+        /// Buscar usuario por su ID
+        /// </summary>
+        /// <param name="userID"></param>
+        /// <param name="imageURL"</param>
+        /// <returns></returns>
+        [Route("UpdateUserImage/{userID}")]
+        [HttpPost]
+        public async Task<IActionResult> UpdateUserImage(int userID, string imageURL)
+        {
+            try
+            {
+                var user = await _userService.UpdateUserImage(userID, imageURL);
+                return Ok(user);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
     }
 }
