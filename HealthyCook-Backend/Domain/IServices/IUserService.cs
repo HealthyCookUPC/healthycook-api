@@ -14,5 +14,6 @@ namespace HealthyCook_Backend.Domain.IServices
         Task<User> SearchUser(int userID);
         Task<User> UpdateUserImage(int userID, string imageUrl);
         Task DeleteUser(User user);
+        Task<int> LoginUser(Login login);
     }
 }

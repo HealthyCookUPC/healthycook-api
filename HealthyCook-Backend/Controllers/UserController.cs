@@ -127,5 +127,17 @@ namespace HealthyCook_Backend.Controllers
                 return BadRequest(ex.Message);
             }
         }
+
+        /// <summary>
+        /// Metodo para logear un usuario
+        /// </summary>
+        /// <param login="login"></param>
+        /// <returns></returns>
+        [Route("Login")]
+        [HttpPost]
+        public async Task<int> ValidateEmail([FromBody] Login login)
+        {
+            return await _userService.LoginUser(login);
+        }
     }
 }

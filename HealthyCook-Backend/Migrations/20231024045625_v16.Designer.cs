@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace HealthyCook_Backend.Migrations
 {
     [DbContext(typeof(AplicationDbContext))]
-    [Migration("20230926010542_add-category-v2")]
-    partial class addcategoryv2
+    [Migration("20231024045625_v16")]
+    partial class v16
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -119,7 +119,7 @@ namespace HealthyCook_Backend.Migrations
                     b.Property<int>("Active")
                         .HasColumnType("int");
 
-                    b.Property<int?>("CategoryIDID")
+                    b.Property<int?>("CategoryID")
                         .HasColumnType("int");
 
                     b.Property<string>("DateCreated")
@@ -145,7 +145,7 @@ namespace HealthyCook_Backend.Migrations
 
                     b.HasKey("ID");
 
-                    b.HasIndex("CategoryIDID");
+                    b.HasIndex("CategoryID");
 
                     b.HasIndex("UserID");
 
@@ -342,6 +342,9 @@ namespace HealthyCook_Backend.Migrations
                         .IsRequired()
                         .HasColumnType("varchar(50)");
 
+                    b.Property<string>("ImageURL")
+                        .HasColumnType("varchar(255)");
+
                     b.Property<string>("Lastname")
                         .IsRequired()
                         .HasColumnType("varchar(50)");
@@ -388,9 +391,9 @@ namespace HealthyCook_Backend.Migrations
 
             modelBuilder.Entity("HealthyCook_Backend.Domain.Models.Recipe", b =>
                 {
-                    b.HasOne("HealthyCook_Backend.Domain.Models.Category", "CategoryID")
+                    b.HasOne("HealthyCook_Backend.Domain.Models.Category", "Category")
                         .WithMany()
-                        .HasForeignKey("CategoryIDID");
+                        .HasForeignKey("CategoryID");
 
                     b.HasOne("HealthyCook_Backend.Domain.Models.User", "User")
                         .WithMany()

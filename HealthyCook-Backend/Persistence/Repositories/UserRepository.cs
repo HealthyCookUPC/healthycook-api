@@ -1,6 +1,7 @@
 ﻿using HealthyCook_Backend.Domain.IRepositories;
 using HealthyCook_Backend.Domain.Models;
 using HealthyCook_Backend.Persistence.Context;
+using HealthyCook_Backend.Utils;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -63,6 +64,18 @@ namespace HealthyCook_Backend.Persistence.Repositories
             await _context.SaveChangesAsync();
             return user;
             
+        }
+
+        public async Task<int> LoginUser(Login login)
+        {
+            var user = await _context.Users
+               .Where(x => x.Username == login.Username)
+               .FirstOrDefaultAsync();
+            if (user != null && user.Username == login.Username && user.Password == Encrypt.EncryptPassword(login.Password))
+            {
+                return user.ID;
+            }
+            return 0;
         }
     }
 }

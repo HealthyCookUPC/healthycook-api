@@ -117,7 +117,7 @@ namespace HealthyCook_Backend.Migrations
                     b.Property<int>("Active")
                         .HasColumnType("int");
 
-                    b.Property<int?>("CategoryIDID")
+                    b.Property<int?>("CategoryID")
                         .HasColumnType("int");
 
                     b.Property<string>("DateCreated")
@@ -143,7 +143,7 @@ namespace HealthyCook_Backend.Migrations
 
                     b.HasKey("ID");
 
-                    b.HasIndex("CategoryIDID");
+                    b.HasIndex("CategoryID");
 
                     b.HasIndex("UserID");
 
@@ -340,6 +340,9 @@ namespace HealthyCook_Backend.Migrations
                         .IsRequired()
                         .HasColumnType("varchar(50)");
 
+                    b.Property<string>("ImageURL")
+                        .HasColumnType("varchar(255)");
+
                     b.Property<string>("Lastname")
                         .IsRequired()
                         .HasColumnType("varchar(50)");
@@ -386,9 +389,9 @@ namespace HealthyCook_Backend.Migrations
 
             modelBuilder.Entity("HealthyCook_Backend.Domain.Models.Recipe", b =>
                 {
-                    b.HasOne("HealthyCook_Backend.Domain.Models.Category", "CategoryID")
+                    b.HasOne("HealthyCook_Backend.Domain.Models.Category", "Category")
                         .WithMany()
-                        .HasForeignKey("CategoryIDID");
+                        .HasForeignKey("CategoryID");
 
                     b.HasOne("HealthyCook_Backend.Domain.Models.User", "User")
                         .WithMany()
