@@ -46,6 +46,7 @@ namespace HealthyCook_Backend
             services.AddScoped<IIngredientTypeService, IngredientTypeService>();
             services.AddScoped<IExcludedIngredientsService, ExcludedIngredientsService>();
             services.AddScoped<ICategoryService, CategoryService>();
+            services.AddScoped<IConsultasAyudaService, ConsultasAyudaService>();
             // Repository
             services.AddScoped<IUserRepository, UserRepository>();
             services.AddScoped<IRecipeRepository, RecipeRepository>();
@@ -57,6 +58,7 @@ namespace HealthyCook_Backend
             services.AddScoped<IIngredientTypeRepository, IngredientTypeRepository>();
             services.AddScoped<IExcludedIngredientsRepository, ExcludedIngredientsRepository>();
             services.AddScoped<ICategoryRepository, CategoryRepository>();
+            services.AddScoped<IConsultasAyudaRespository, ConsultasAyudaRepository>();
             // Cors
             services.AddCors(options => options.AddPolicy("AllowWebapp",
                              builder => builder.AllowAnyOrigin().
