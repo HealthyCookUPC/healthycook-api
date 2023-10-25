@@ -4,14 +4,16 @@ using HealthyCook_Backend.Persistence.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace HealthyCook_Backend.Migrations
 {
     [DbContext(typeof(AplicationDbContext))]
-    partial class AplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20231025151234_vxd")]
+    partial class vxd
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -141,9 +143,6 @@ namespace HealthyCook_Backend.Migrations
                     b.Property<int>("Active")
                         .HasColumnType("int");
 
-                    b.Property<int?>("CategoryID")
-                        .HasColumnType("int");
-
                     b.Property<string>("DateCreated")
                         .HasColumnType("nvarchar(max)");
 
@@ -166,8 +165,6 @@ namespace HealthyCook_Backend.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("ID");
-
-                    b.HasIndex("CategoryID");
 
                     b.HasIndex("UserID");
 
@@ -413,10 +410,6 @@ namespace HealthyCook_Backend.Migrations
 
             modelBuilder.Entity("HealthyCook_Backend.Domain.Models.Recipe", b =>
                 {
-                    b.HasOne("HealthyCook_Backend.Domain.Models.Category", "Category")
-                        .WithMany()
-                        .HasForeignKey("CategoryID");
-
                     b.HasOne("HealthyCook_Backend.Domain.Models.User", "User")
                         .WithMany()
                         .HasForeignKey("UserID")
