@@ -6,19 +6,19 @@ namespace HealthyCookSpecFlow.Tests.Steps
     [Binding]
     public class ConsultaAyudaStepsDefinition
     {
-        [Given(@"the user wants to ask for help")]
+        [Given(@"user is logged into the application")]
         public void GivenTheUserWantsToAskForHelp()
         {
             ScenarioContext.Current.Pending();
         }
         
-        [When(@"the user fills in the form with the requested information")]
+        [When(@"the user goes to the navigation bar")]
         public void WhenTheUserFillsInTheFormWithTheRequestedInformation(Table table)
         {
             ScenarioContext.Current.Pending();
         }
         
-        [Then(@"the user will get an answer")]
+        [Then(@"An explanation of each section, frequently asked questions and a form to ask a question will then appear on the screen")]
         public void ThenTheUserWillBeSuccessfullyRegistered()
         {
             ScenarioContext.Current.Pending();

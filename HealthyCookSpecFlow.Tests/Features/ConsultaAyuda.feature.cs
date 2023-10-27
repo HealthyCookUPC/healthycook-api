@@ -74,14 +74,14 @@ namespace HealthyCookSpecFlow.Tests.Features
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("The user will get an answer")]
+        [NUnit.Framework.DescriptionAttribute("The user gets an answer in the help window")]
         [NUnit.Framework.CategoryAttribute("ConsultaAyuda")]
         public virtual void TheUserWillGetAnAnswer()
         {
             string[] tagsOfScenario = new string[] {
                     "ConsultaAyuda"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("The user will get an answer ", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("The user gets an answer in the help window", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 5
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -103,7 +103,7 @@ this.ScenarioInitialize(scenarioInfo);
             {
                 this.ScenarioStart();
 #line 6
- testRunner.Given("the user wants to ask for help", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given("the user is logged into the application", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
                 TechTalk.SpecFlow.Table table10 = new TechTalk.SpecFlow.Table(new string[] {
                             "Username",
@@ -114,10 +114,10 @@ this.ScenarioInitialize(scenarioInfo);
                             "pedrito01@gmail.com",
                             "pedrito is a good person"});
 #line 8
- testRunner.When("the user fills in the form with the requested information", ((string)(null)), table10, "When ");
+ testRunner.When("the user goes to the navigation bar and press on the Help part", ((string)(null)), table10, "When ");
 #line hidden
 #line 11
- testRunner.Then("the user will get an answer", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("Then An explanation of each section, frequently asked questions and a form to ask a question will then appear on the screen", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -151,10 +151,10 @@ this.ScenarioInitialize(scenarioInfo);
             {
                 this.ScenarioStart();
 #line 14
- testRunner.Given("the user wants to ask for help", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given("the user is logged into the application", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 15
- testRunner.When("the user fills in the form with the requested information", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("the user goes to the navigation bar and press on the Help part", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
                 TechTalk.SpecFlow.Table table11 = new TechTalk.SpecFlow.Table(new string[] {
                             "Warning Message"});

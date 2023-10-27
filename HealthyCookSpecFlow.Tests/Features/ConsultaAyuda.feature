@@ -3,15 +3,15 @@ Feature: ConsultaAyuda
 
 @registerUser
 Scenario: The user gets an answer in the help window
-	Given the user wants to ask for help
-	When the user fills in the form with the requested information
+	Given the user is logged into the application
+	When the user goes to the navigation bar and press on the Help part
 	| Username   | Email               | Description        |
 	| Pedrito007 | pedrito01@gmail.com | pedrito is a good person | 
-	Then the user will get an answer
+	Then An explanation of each section, frequently asked questions and a form to ask a question will then appear on the screen
 
 Scenario: The user can not get an answer in the help window
-	Given the user wants to ask for help
-	When the user fills in the form with the requested information
+	Given the user is logged into the application
+	When the user goes to the navigation bar and press on the Help part
 	Then a warning message will be displayed in the help window
 	| Warning Message              |
 	| Información no encontrada | 
