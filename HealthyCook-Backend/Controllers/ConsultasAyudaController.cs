@@ -1,6 +1,7 @@
 ﻿using HealthyCook_Backend.Domain.IServices;
 using HealthyCook_Backend.Domain.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Routing;
 using System;
 using System.Threading.Tasks;
 
@@ -32,6 +33,35 @@ namespace HealthyCook_Backend.Controllers
             catch (Exception ex)
             {
                 return BadRequest(ex.Message);
+            }
+        }
+        
+        [Route("GetConsultasAyudasByFlag/{flag}")]
+        [HttpGet]
+        public async Task<IActionResult> GetConsultasAyudasByFlag(string flag)
+        {
+            try
+            {
+                var consultaAyudaList = _consultaService.GetConsultasAyudasByFlag(flag);
+                return Ok(consultaAyudaList);
+            } catch(Exception e)
+            {
+                return BadRequest(e.Message);
+            }
+        }
+
+        [Route("GetConsultasAyudasByPrioridad/{prioridad}")]
+        [HttpGet]
+        public async Task<IActionResult> GetConsultasAyudasByPrioridad(string prioridad)
+        {
+            try
+            {
+                var consultaAyudaList = _consultaService.GetConsultasAyudasByPrioridad(prioridad);
+                return Ok(consultaAyudaList);
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
             }
         }
     }
