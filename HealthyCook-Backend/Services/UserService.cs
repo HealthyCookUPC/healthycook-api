@@ -36,6 +36,11 @@ namespace HealthyCook_Backend.Services
             return await _userRepository.SearchUser(userID);
         }
 
+        public async Task<User> UpdateUser(UpdateUserDto dto)
+        {
+            return await _userRepository.UpdateUser(dto);
+        }
+
         public async Task<User> UpdateUserImage(int userID, string imageUrl)
         {
             return await _userRepository.UpdateUserImage(userID, imageUrl);
