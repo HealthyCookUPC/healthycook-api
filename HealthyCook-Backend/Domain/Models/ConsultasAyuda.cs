@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace HealthyCook_Backend.Domain.Models
@@ -18,5 +19,15 @@ namespace HealthyCook_Backend.Domain.Models
         [Required]
         [Column(TypeName = "varchar(255)")]
         public string Description { get; set; }
+
+        [Required]
+        [Column(TypeName = "varchar(50)")]
+        public string Flag { get; set; }
+
+        [Required]
+        [Column(TypeName = "varchar(50)")]
+        public string Prioridad { get; set; }
+
+        public DateTime DateCreated { get; set; }
     }
 }
