@@ -127,7 +127,20 @@ namespace HealthyCook_Backend.Controllers
                 return BadRequest(ex.Message);
             }
         }
-
+        [Route("UpdateUser")]
+        [HttpPost]
+        public async Task<IActionResult> UpdateUser([FromBody] UpdateUserDto dto)
+        {
+            try
+            {
+                var user = await _userService.UpdateUser(dto);
+                return Ok(user);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
         /// <summary>
         /// Metodo para logear un usuario
         /// </summary>

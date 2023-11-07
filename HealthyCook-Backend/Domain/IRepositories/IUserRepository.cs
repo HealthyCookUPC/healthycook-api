@@ -9,6 +9,7 @@ namespace HealthyCook_Backend.Domain.IRepositories
     public interface IUserRepository
     {
         Task SaveUser(User user);
+        Task<User> UpdateUser(UpdateUserDto dto);
         Task<bool> ValidateExistence(User user);
         Task<bool> ValidateEmail(string email);
         Task<User> SearchUser(int userID);
