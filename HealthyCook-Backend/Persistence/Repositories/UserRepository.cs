@@ -66,16 +66,16 @@ namespace HealthyCook_Backend.Persistence.Repositories
             
         }
 
-        public async Task<int> LoginUser(Login login)
+        public async Task<string> LoginUser(Login login)
         {
             var user = await _context.Users
                .Where(x => x.Username == login.Username)
                .FirstOrDefaultAsync();
             if (user != null && user.Username == login.Username && user.Password == Encrypt.EncryptPassword(login.Password))
             {
-                return user.ID;
+                return "Usuario logeado correctamente. ID: " + user.ID.ToString();
             }
-            return 0;
+            return "Contraseña incorrecta";
         }
 
         public async Task<User> UpdateUser(UpdateUserDto dto)

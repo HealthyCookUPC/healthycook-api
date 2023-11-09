@@ -21,7 +21,7 @@ namespace HealthyCook_Backend.Services
             await _userRepository.DeleteUser(user);
         }
 
-        public async Task<int> LoginUser(Login login)
+        public async Task<string> LoginUser(Login login)
         {
             return await _userRepository.LoginUser(login);
         }

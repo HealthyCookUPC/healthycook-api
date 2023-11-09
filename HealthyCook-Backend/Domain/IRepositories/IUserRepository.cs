@@ -14,7 +14,7 @@ namespace HealthyCook_Backend.Domain.IRepositories
         Task<bool> ValidateEmail(string email);
         Task<User> SearchUser(int userID);
         Task<User> UpdateUserImage(int userID, string imageUrl);
-        Task<int> LoginUser(Login login);
+        Task<string> LoginUser(Login login);
         Task DeleteUser(User user);
     }
 }
