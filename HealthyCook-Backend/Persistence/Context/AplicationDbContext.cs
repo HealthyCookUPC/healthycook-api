@@ -23,6 +23,8 @@ namespace HealthyCook_Backend.Persistence.Context
         public DbSet<Category> Category { get; set; }
         public DbSet<ConsultasAyuda> Consulta { get; set; }
 
+        public DbSet<Comment> Comment { get; set; }
+
         public AplicationDbContext(DbContextOptions<AplicationDbContext> options) : base(options)
         {}
     }
