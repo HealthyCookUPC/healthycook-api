@@ -166,6 +166,21 @@ this.ScenarioInitialize(scenarioInfo);
             }
             this.ScenarioCleanup();
         }
-        
+        #line 14
+ testRunner.Given("The user can filter the table by priority and flag", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+#line 15
+ testRunner.When(" the user can filter the table by priority and flag", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+                TechTalk.SpecFlow.Table table11 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Warning Message"});
+                table11.AddRow(new string[] {
+                            "Información no enconrada"});
+#line 16
+ testRunner.Then("the information will be shown on the page", ((string)(null)), table11, "Then ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
 #pragma warning restore
 #endregion

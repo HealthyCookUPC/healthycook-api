@@ -15,3 +15,8 @@ Scenario: The user can not get an answer in the help window
 	Then a warning message will be displayed in the help window
 	| Warning Message              |
 	| Información no encontrada | 
+
+	Scenario: The user can filter the table by priority and flag
+	Given the user is logged into the application
+	When the user can filter the table by priority and flag
+	Then the information will be shown on the page

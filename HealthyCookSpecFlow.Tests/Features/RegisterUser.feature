@@ -23,3 +23,11 @@ Scenario: The user's email is already in use
 	Then you will not be able to register and a message will be displayed
 	| Message                                   |
 	| El email ingresado ya se encuentra en uso | 
+
+@updateUser
+Scenario: The user wants to update the information
+	Given the user wants to update the user information
+	When the user fills the blanks with information
+	| Username   | Firstname | Lastname | Email               | Password        |
+	| Pedrito007 | Pedro     | Humal    | pedrito01@gmail.com | pedritolomax01! | 
+	Then the user information will be updated
