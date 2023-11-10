@@ -148,7 +148,7 @@ namespace HealthyCook_Backend.Controllers
         /// <returns></returns>
         [Route("Login")]
         [HttpPost]
-        public async Task<int> ValidateEmail([FromBody] Login login)
+        public async Task<string> LoginUser([FromBody] Login login)
         {
             return await _userService.LoginUser(login);
         }

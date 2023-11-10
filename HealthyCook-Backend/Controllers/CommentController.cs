@@ -37,7 +37,7 @@ namespace HealthyCook_Backend.Controllers
             try
             {
                 var commentList = _commentService.GetCommentById(recipeID);
-                return Ok(commentList);
+                return Ok(commentList.Result);
             }
             catch (Exception e)
             {

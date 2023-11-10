@@ -43,7 +43,7 @@ namespace HealthyCook_Backend.Controllers
             try
             {
                 var consultaAyudaList = _consultaService.GetConsultasAyudasByFlag(flag);
-                return Ok(consultaAyudaList);
+                return Ok(consultaAyudaList.Result);
             } catch(Exception e)
             {
                 return BadRequest(e.Message);
@@ -57,7 +57,7 @@ namespace HealthyCook_Backend.Controllers
             try
             {
                 var consultaAyudaList = _consultaService.GetConsultasAyudasByPrioridad(prioridad);
-                return Ok(consultaAyudaList);
+                return Ok(consultaAyudaList.Result);
             }
             catch (Exception e)
             {
