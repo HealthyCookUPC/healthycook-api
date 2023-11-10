@@ -86,7 +86,6 @@ namespace HealthyCook_Backend.Persistence.Repositories
             user.Username = string.IsNullOrEmpty(dto.Username) ? user.Username : dto.Username;
             user.Firstname = string.IsNullOrEmpty(dto.Firstname) ? user.Firstname : dto.Firstname;
             user.Lastname = string.IsNullOrEmpty(dto.Lastname) ? user.Lastname : dto.Lastname;
-            _context.Add(user);
             await _context.SaveChangesAsync();
             return user;
         }
