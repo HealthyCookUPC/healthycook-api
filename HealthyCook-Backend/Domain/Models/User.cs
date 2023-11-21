@@ -29,5 +29,7 @@ namespace HealthyCook_Backend.Domain.Models
         public string ImageURL { get; set; }
 
         public DateTime DateCreated { get; set; }
+        public List<Followers> Followers { get; set; }
+        public List<Followers> Followeds { get; set; }
     }
 }

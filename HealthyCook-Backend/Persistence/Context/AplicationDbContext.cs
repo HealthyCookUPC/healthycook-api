@@ -24,8 +24,23 @@ namespace HealthyCook_Backend.Persistence.Context
         public DbSet<ConsultasAyuda> Consulta { get; set; }
 
         public DbSet<Comment> Comment { get; set; }
+        public DbSet<Followers> Followers{ get; set; }
 
         public AplicationDbContext(DbContextOptions<AplicationDbContext> options) : base(options)
         {}
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Followers>()
+            .HasOne(s => s.User)
+            .WithMany(u => u.Followers)
+            .HasForeignKey(s => s.UserID)
+            .OnDelete(DeleteBehavior.Restrict);
+
+            modelBuilder.Entity<Followers>()
+                .HasOne(s => s.FollowedUser)
+                .WithMany(u => u.Followeds)
+                .HasForeignKey(s => s.FollowedUserID)
+                .OnDelete(DeleteBehavior.Restrict);
+        }
     }
 }

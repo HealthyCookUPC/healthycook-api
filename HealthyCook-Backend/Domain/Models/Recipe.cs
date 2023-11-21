@@ -28,8 +28,6 @@ namespace HealthyCook_Backend.Domain.Models
         public int UserID { get; set; }
         public User User { get; set; }
 
-        [NotMapped]
-        public Category Category { get; set; }
     }
 
 }
