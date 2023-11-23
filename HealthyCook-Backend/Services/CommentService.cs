@@ -13,6 +13,12 @@ namespace HealthyCook_Backend.Services
         {
             _commentRepository = commentRepository;
         }
+
+        public async Task AgregarLike(int commentId)
+        {
+            await _commentRepository.AgregarLike(commentId);
+        }
+
         public async Task CreateComment(Comment comment)
         {
             await _commentRepository.CreateComment(comment);

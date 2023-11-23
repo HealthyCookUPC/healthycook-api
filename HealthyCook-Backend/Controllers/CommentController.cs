@@ -44,6 +44,21 @@ namespace HealthyCook_Backend.Controllers
                 return BadRequest(e.Message);
             }
         }
+
+        [Route("AgregarLike/{commentId}")]
+        [HttpPost]
+        public async Task<IActionResult> AgregarLike(int commentId)
+        {
+            try
+            {
+                await _commentService.AgregarLike(commentId);
+                return Ok();
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
     }
 
 

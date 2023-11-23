@@ -20,5 +20,7 @@ namespace HealthyCook_Backend.Domain.Models
         public Recipe Recipe { get; set; }
         public DateTime DateCreated { get; set; }
 
+        public int Like { get; set; }
+
     }
 }

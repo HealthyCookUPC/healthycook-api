@@ -9,5 +9,8 @@ namespace HealthyCook_Backend.Domain.IRepositories
         Task CreateComment(Comment comment);
 
         Task<List<Comment>> GetCommentById(int recipeID);
+
+        Task AgregarLike(int commentId);
+
     }
 }

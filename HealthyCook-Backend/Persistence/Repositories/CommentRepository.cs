@@ -17,6 +17,15 @@ namespace HealthyCook_Backend.Persistence.Repositories
             _context = context;
         }
 
+        public async Task AgregarLike(int commentId)
+        {
+            var comment = await _context.Comment
+                .Where(x => x.ID == commentId)
+                .FirstOrDefaultAsync();
+            comment.Like += 1;
+            await _context.SaveChangesAsync();
+        }
+
         public async Task CreateComment(Comment comment)
         {
             _context.Add(comment);
