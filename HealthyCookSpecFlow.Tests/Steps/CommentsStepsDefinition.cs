@@ -23,6 +23,10 @@ namespace HealthyCookSpecFlow.Tests.Steps
         {
             ScenarioContext.Current.Pending();
         }
-        
+        [Then("the comment will add a like")]
+        public void ThenCommentWillAddLike()
+        {
+             ScenarioContext.Current.Pending();
+        }
     }
 }

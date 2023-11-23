@@ -115,4 +115,46 @@ this.ScenarioInitialize(scenarioInfo);
             this.ScenarioCleanup();
         }
         
-     
+            [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("The user gets a comment on the page")]
+        [NUnit.Framework.CategoryAttribute("Comment")]
+        public virtual void TheUserWillGetAnAnswer()
+        {
+            string[] tagsOfScenario = new string[] {
+                    "Comment"};
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("The user gets a comment on the page", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+#line 5
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            bool isScenarioIgnored = default(bool);
+            bool isFeatureIgnored = default(bool);
+            if ((tagsOfScenario != null))
+            {
+                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((this._featureTags != null))
+            {
+                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((isScenarioIgnored || isFeatureIgnored))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+#line 6
+ testRunner.Given("the user is logged into the application", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+
+#line 8
+ testRunner.When("the user clicks the like button", ((string)(null)), table10, "When ");
+#line hidden
+#line 11
+ testRunner.Then("the comment will add a like", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
+    }
+}
